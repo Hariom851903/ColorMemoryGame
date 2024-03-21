@@ -1,12 +1,13 @@
 import React from 'react';
-import Dice from './components/Dice'; // Import Dice component
-
+import Winner from './components/Winner';
+import './App.css'
+import HomePage from './components/HomePgae';
 const App = () => {
   return (
-    <div>
-      <h1>Roll the Dice</h1>
-      <Dice />
-    </div>
+    <div style={{ backgroundColor: '#000000' }} className='container'>
+    <HomePage/>
+    {/* <Winner/> */}
+  </div>
   );
 };
 

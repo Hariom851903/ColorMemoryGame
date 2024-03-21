@@ -1,0 +1,227 @@
+.main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 900px;
+  height: 80%;
+  background-color: #262626; /* Dark gray background */
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.userscore {
+  text-align: center;
+    /* color: #ffffff; */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    color: chartreuse;
+}
+
+.userscore div {
+  font-size: 35px;
+}
+
+.section-2 {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-3 {
+  display: flex;
+  margin-top: 20px;
+  border: 2px solid #e3dbea;
+  width: 50%;
+  justify-content: center;
+  background-color: #3c3a38;
+  height: 15%;
+  align-items: center;
+  border-radius: 20%;
+  color: deeppink;
+  font-family: cursive;
+}
+
+.section-3 div {
+  font-size: 20px;
+}
+
+
+.score {
+  font-weight: bold;
+  color: #ffcc00; /* Yellow for scores */
+}
+
+/* .chancetime {
+  color: #ffcc00; /* Yellow for chance text */
+/* } */ 
+
+/* Form container */
+.form-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* Change background color */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 300px) and (max-width: 700px) {
+  .main{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 90%;
+    background-color: #262626;
+    padding: 20px;
+    border-radius: 50px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .userscore div{
+    font-size: 20px;
+  }
+  .userscore{
+    width: 90%;
+    text-align: center;
+    color: chartreuse;/* White text */
+    margin-bottom: 0;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+  .section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: baseline;
+    height: 80%;
+    width: 100%;
+  }
+  .section-3{
+    display: flex;
+    margin-top: 20px;
+    border: 2px solid #e3dbea;
+    width: 80%;
+    justify-content: center;
+    background-color: #3c3a38;
+    height: 15%;
+    align-items: center;
+    border-radius: 40%;
+    color: deeppink;
+    font-family: cursive;
+  }
+  .section-3 div{
+        font-size: 15px;
+  }
+  .chance{
+
+  }
+}
+
+@media (min-width: 701px) and (max-width: 950px) {
+  .main{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 90%;
+    background-color: #262626;
+    padding: 20px;
+    border-radius: 50px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .userscore div{
+    font-size: 35px;
+  }
+  .userscore{
+    width: 90%;
+    text-align: center;
+    color: chartreuse;/* White text */
+    margin-bottom: 0;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+  .section-2 {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: flex-start;
+    align-items: center; */
+    height: 80%;
+    width: 100%;
+  }
+  .section-3{
+    display: flex;
+    margin-top: 20px;
+    border: 2px solid #e3dbea;
+    width: 80%;
+    justify-content: center;
+    background-color: #3c3a38;
+    height: 10%;
+    align-items: center;
+    border-radius: 40%;
+    color: deeppink;
+    font-family: cursive;
+  }
+  .section-3 div{
+        font-size: 35px;
+  }
+  .chance{
+
+  }
+}
+
+/* Center the form on the screen */
+@media (max-width: 600px) {
+  .form-container {
+    width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+/* Form */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form elements */
+.form-container label {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.form-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit button */
+.form-container button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Hover effect on submit button */
+.form-container button:hover {
+  background-color: #0056b3;
+}

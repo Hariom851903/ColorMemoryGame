@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/Dice.css'; // CSS file for styling
 import Boxes from './Boxes';
 
-const Dice = () => {
+const Dice = ({updatescore,handlplayer}) => {
   const [diceValue, setDiceValue] = useState(0); // State for storing dice value
   const [rolling, setRolling] = useState(false); // State to track if dice is currently rolling
   const [pointer,setpointer]=useState(true)
@@ -12,7 +12,7 @@ const Dice = () => {
     if (!rolling) {
       setRolling(true); // Start rolling animation
       setTimeout(() => {
-        const newValue = Math.floor(Math.random() * 3) + 1; // Generate a random value between 1 to 3
+        const newValue = Math.floor(Math.random() * 5) + 1; // Generate a random value between 1 to 3
         setDiceValue(newValue); // Update dice value
         setRolling(false); // Stop rolling animation
         setpointer(false);
@@ -21,7 +21,9 @@ const Dice = () => {
   };
   function chnagepointer()
   {
+    handlplayer()
     setpointer(true)
+
   }
   // Effect to reset dice value when rolling state changes
   useEffect(() => {
@@ -30,13 +32,16 @@ const Dice = () => {
 
   return (
     <>
-        <Boxes chgpointer={chnagepointer} dicevalue={diceValue} pointervalue={pointer} />
+
+      <div className='dicebox'>
+      <Boxes chgpointer={chnagepointer} dicevalue={diceValue} pointervalue={pointer} updatescore={updatescore}/>    
         <div className="dice-container">
         
-      <div className={`dice dice-${diceValue} ${rolling ? 'rolling' : ''} dot-${diceValue} ${pointer? '':'dicpointer'}`} onClick={rollDice}>
+      <div className={`dice  ${rolling ? 'rolling' : ''}  dot-${diceValue}  ${pointer? '':'dicpointer'}`} onClick={rollDice}>
 
       </div>
     </div>
+      </div>
     </>
     
   );

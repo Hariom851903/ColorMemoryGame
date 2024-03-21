@@ -1,0 +1,161 @@
+/* winner.css */
+
+/* Winner Container */
+.winner-container {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #28a745;
+}
+
+/* Button Style */
+.winner-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.winner-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Toast Notification */
+.Toastify__toast-container {
+    position: absolute;
+    width: 600px;
+    top: calc(40% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Toastify__toast {
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.Toastify__toast--success {
+    background-color: #28a745;
+}
+
+.Toastify__progress-bar {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.balloons {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.balloon,.balloon-11 {
+    position: absolute;
+    animation-name: balloon-animation;
+    animation-duration: 5s; /* Increase duration for slower movement */
+    animation-timing-function: linear; /* Use ease-out for smooth deceleration */
+    animation-iteration-count: infinite;
+}
+
+@keyframes balloon-animation {
+    0% { 
+        transform: translateY(0) rotate(0); /* Start at the bottom */
+    }
+    20% { 
+        transform: translateY(-25vh) rotate(45); /* Start at the bottom */
+    }
+    40%{
+        transform: translateY(0) rotate(90); /* Start at the bottom */
+    }
+    60% {
+        transform: translateY(-50vh) rotate(180deg); /* Float upwards */
+    }
+    80%{
+        transform: translateY(0) rotate(360deg); /* Float upwards */
+    }
+    
+    100% {
+        transform: translateY(-70vh) rotate(720deg); /* Stop at the top */
+    }
+}
+
+.balloon-1 {
+    left: 10%;
+    bottom: 50%;
+    font-size: 100px;
+}
+
+.balloon-2 {
+    left: 30%;
+    bottom: 50%;
+    font-size: 100px;
+}
+
+.balloon-3 {
+    left: 20%;
+    bottom: 20%;
+    font-size: 100px;
+}
+
+.balloon-4 {
+    left: 10%;
+    bottom: 50%;
+    font-size: 100px;
+}
+
+.balloon-5 {
+    left: 5%;
+    bottom: 50%;
+    font-size: 100px;
+}
+
+.balloon-6 {
+    left: 25%;
+    bottom: 50%;
+    font-size: 100px;
+}
+
+.balloon-7 {
+    right: 30%;
+    top: 10%;
+    font-size: 100px;
+}
+
+.balloon-8 {
+    top: 20%;
+    font-size: 100px;
+}
+
+.balloon-9 {
+    top: 35%;
+    right: 50%;
+        font-size: 100px;
+}
+
+.balloon-10 {
+    top: 50%;
+    right: 110%;
+    font-size: 100px;
+}
+
+.balloon-11 {
+    right: 115%;
+    top: 80%;
+    font-size: 100px;
+}
+
+.balloon-12 {
+    top: 30%;
+    right: 100%;
+    font-size: 100px;
+}
+.player{
+    color: black;
+}

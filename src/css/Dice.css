@@ -1,10 +1,16 @@
 .dice-container {
-    margin-top: 15px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
   
+
+
+
   .dice {
     width: 100px;
     height: 100px;
@@ -23,6 +29,14 @@
     animation: rolling-animation 1s ease-out infinite;/* Rolling animation */
   }
   
+
+  .dicebox{
+    display: flex;
+    width: 700px;
+    height: 100%;
+    justify-content: space-evenly;
+
+  }
   @keyframes rolling-animation {
     0% {
       transform: rotateX(0deg) rotateY(0deg);
@@ -57,22 +71,77 @@
   .dot-1 {
     /* top: 40%;
     left: 40%; */
-    background-color: #f40707; /* Red */
+    background-color: red; /* Red */
   }
   
   .dot-2 {
     /* top: 30%;
     left: 30%; */
-    background-color: #32cd32; /* Green */
+    background-color:deepskyblue; /* Green */
   }
   
   .dot-3 {
     /* top: 50%;
     left: 50%; */
-    background-color: #3806ec; /* Yellow */
+    background-color: blue; /* Yellow */
   }
+  .dot-4{
+    background-color: blueviolet;
+  }
+  .dot-5{
+    background-color:mediumspringgreen;
+  }
+
   
   .dicpointer 
   {
     pointer-events: none;
   }
+
+  @media (min-width: 300px) and (max-width: 700px) {
+    .dice-container {
+      /* margin-top: 15px; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      margin: auto;
+  }
+    .dice {
+      width: 50px; /* Adjust width for smaller screens */
+      height: 50px;
+    }
+    .dicebox{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width: 950px) {
+  .dice-container {
+    /* margin-top: 15px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    margin: auto;
+}
+  .dice {
+    width: 80px; /* Adjust width for smaller screens */
+    height: 80px;
+  }
+  .dicebox{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+  }
+}

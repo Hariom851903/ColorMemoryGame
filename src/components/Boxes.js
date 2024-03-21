@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import '../css/box.css';
-import logo from './logo.png';
+import logo from './logocolor.jpg';
 
-const Boxes = ({ chgpointer, dicevalue, pointervalue }) => {
-    const [colors, setColors] = useState(Array(12).fill(null)); // State for storing box colors
-    const [tr, setTr] = useState(Array(12).fill(false)); // State to track clicked boxes
-    const [diceValue, setDiceValue] = useState(null); // State for storing dice value
-    const [chgcolor, setChgColor] = useState(true); // State for controlling color change animation
+const Boxes = ({ chgpointer, dicevalue, pointervalue,updatescore }) => {
+    const [colors, setColors] = useState(Array(20).fill(null)); // State for storing box colors
+    const [tr, setTr] = useState(Array(20).fill(false)); // State to track clicked boxes
+    // const [diceValue, setDiceValue] = useState(null); // State for storing dice value
+    // const [chgcolor, setChgColor] = useState(true); // State for controlling color change animation
+    const [rolling,setrolling]=useState(false)
     // Function to generate random background colors for boxes
-    const colorOptions = ['red', 'green', 'blue'];
+    const colorOptions = ['red', 'deepskyblue', 'blue','blueviolet','mediumspringgreen'];
     const generateRandomColors = () => {
        
-        const newColors = Array(12).fill(null).map(() => {
+        const newColors = Array(20).fill(null).map(() => {
             const randomIndex = Math.floor(Math.random() * colorOptions.length);
             return colorOptions[randomIndex];
         });
@@ -23,9 +24,11 @@ const Boxes = ({ chgpointer, dicevalue, pointervalue }) => {
     }, []);
 
     // Function to handle box click
+  
     const handleBoxClick = (index) => {
       // Set the diceValue to the index of the clicked box's color in the colorOptions array
-      setDiceValue(colorOptions.indexOf(colors[index]));
+      setrolling(true)
+    //   setDiceValue(colorOptions.indexOf(colors[index]));
   
       // Create a copy of the tr state
       const updatedTr = [...tr];
@@ -35,7 +38,7 @@ const Boxes = ({ chgpointer, dicevalue, pointervalue }) => {
       setTr(updatedTr);
   
       // Disable changing colors temporarily
-      setChgColor(false);
+    //   setChgColor(false);
   
       // Check if the index of the clicked box's color matches the diceValue
       if (colorOptions.indexOf(colors[index]) !== dicevalue - 1) {
@@ -45,28 +48,41 @@ const Boxes = ({ chgpointer, dicevalue, pointervalue }) => {
               setTr(updatedTr);
           }, 100);
       }
-  
+      else 
+      {
+        updatescore()
+      }
+    
       // Enable changing colors after 2 seconds
       setTimeout(() => {
-          setChgColor(true);
-      }, 2000);
-  };
-  
+        //   setChgColor(true);
+          setrolling(false);
+          
+      }, 500);  
+    setTimeout(() => {
+      chgpointer()
+    }, 670);
+  }
+
 
     return (
         <div className="game-container">
-            <div className="boxes">
+            <div className="boxes " >
                 {colors.map((color, index) => (
-                    <div key={index} className="box" onClick={() => handleBoxClick(index)}>
-                        <div className="front">
+                  <div
+    key={index}
+    style={{ pointerEvents: tr[index] ? 'none' : '' }}
+    className={`box ${pointervalue || !(tr.includes(false)) ? 'boxespointer' : ''}`}
+    onClick={() => handleBoxClick(index)}
+>
+                        <div className={`front `}>
                             {!tr[index]?
-                                <img src={logo} alt="Image" className='image' />
-                                : <div className="back" style={{ backgroundColor: `${color}` }}></div>}
+                                <img src={logo} alt="ImageNot" className={`image`} />
+                                : <div className={`back  ${rolling? 'rolling':''}`} style={{ backgroundColor: `${color}`}}></div>}
                         </div>
                     </div>
                 ))}
             </div>
-            {diceValue && <p>Clicked color: {diceValue}</p>}
         </div>
     );
 };

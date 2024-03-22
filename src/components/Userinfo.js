@@ -38,7 +38,7 @@ const setPlayer = (playerScore) => {
         console.log("Hariom")
         setTimeout(()=>{
             setload(true)
-        },2000)
+        },1000)
     }
 };
 
